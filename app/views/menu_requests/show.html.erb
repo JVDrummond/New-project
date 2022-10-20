@@ -1,0 +1,29 @@
+<div>
+  <div style="display: flex; justify-content: space-between; width: 50%">
+    <h3> Lanches </h3>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; width: 50%">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Cardápio</th>
+          <th>Preço</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+        <td><%= @menu_request.item.name%></td>
+        <td><%= @menu_request.menu.description%></td>
+        <td><%= @menu_request.price%></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<%= link_to "Voltar", menu_path %>

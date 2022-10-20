@@ -1,0 +1,22 @@
+
+<p>
+  <strong>item:</strong>
+  <%= @request.item.name %>
+</p>
+
+<p>
+  <strong>estimated_time:</strong>
+  <%= @request.estimated_time.strftime("%H:%M") %>
+</p>
+
+<p>
+  <strong>number_request:</strong>
+  <%= @request.number_request %>
+</p>
+
+<p>
+  <strong>quantity:</strong>
+  <%= @request.quantity %>
+</p>
+
+<%= link_to 'Voltar', requests_path %>

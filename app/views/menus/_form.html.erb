@@ -1,0 +1,29 @@
+
+<%= form_for @menu do |menu| %>
+
+  <p>
+    <%= menu.label :Menu%>
+    <%= menu.text_field :description %>
+  </p>
+
+  <%= menu.fields_for :menu_requests do |menu_request|%>
+
+    <p>
+      <%= menu_request.label :Name%><br>
+      <%= menu_request.collection_select :item_id, Item.all, :id, :name, prompt: "Selecione um item"%>
+    </p>
+
+    <p>
+      <%= menu_request.label :Price %><br>
+      <%= menu_request.number_field :price, min: 0, step: :any %>
+    </p>
+
+  <%end%>
+
+    <p>
+      <%= menu.submit %>
+    </p>
+
+<% end %>
+
+<%= link_to 'Voltar', menus_path %>

@@ -1,0 +1,16 @@
+<h1>Show</h1>
+
+<strong>Nome:</strong>
+<%= @item.name%><br>
+
+<strong>Descrição:</strong>
+<%= @item.description%><br>
+
+<strong>Categoria:</strong>
+<%= @item.category_id%><br>
+
+<strong>Situação:</strong>
+<%=@item.ativo%><br>
+<br>
+
+<%= link_to 'Voltar', items_path%>

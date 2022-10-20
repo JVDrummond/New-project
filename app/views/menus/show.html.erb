@@ -1,0 +1,38 @@
+<h1>Cardápio</h1>
+
+<div>
+  <div style="display: flex; justify-content: space-between; width: 50%">
+    <h4> Lanches </h4>
+    <%= link_to 'New', new_menu_request_path %>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; width: 50%">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @menu.menu_requests.each do |menu| %>
+          <tr>
+            <td><%= menu.item.name %></td>
+            <td><%= menu.item.description %></td>
+            <td><%= menu.price %></td>
+            <td>
+              <%= link_to 'Editar', edit_menu_request_path(menu) %>
+              <%= link_to 'Deletar', menu_request_path(menu), method: :delete %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<%= link_to 'Voltar', menus_path %>

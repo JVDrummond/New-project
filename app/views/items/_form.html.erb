@@ -1,0 +1,28 @@
+<%= form_with model: @item do |form| %>
+
+  <div class="field">
+    <%= form.label :Nome %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Categoria%><br>
+    <%= form.collection_select :category_id, Category.all, :id, :description, prompt: "Selecione a categoria..."%>
+  </div>
+
+  <div class="field">
+    <%= form.label :Ingredientes %><br>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Ativo %><br>
+    <%= form.check_box :ativo %>
+  </div>
+
+  <div class="field">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+

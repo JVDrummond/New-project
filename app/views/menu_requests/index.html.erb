@@ -1,0 +1,23 @@
+<h1><%= "Nome do cardápio"%> </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Item </th>
+      <th> Price </th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @menu_requests.each do |menu| %>
+      <tr>
+      <td><%= menu.item.name %></td>
+      <td><%= menu.price %></td>
+      <td><%= link_to 'Editar', edit_menu_request_path(menu) %></td>
+      <td><%= link_to 'Delete', menu_request_path(menu),
+                  method: :delete,
+                  data: { confirm: 'Tem certeza?'}  %></td>
+      <td><%= %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

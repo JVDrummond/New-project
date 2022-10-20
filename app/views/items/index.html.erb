@@ -1,0 +1,29 @@
+<h1>Itens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Nome </th>
+      <th> Ingredientes </th>
+      <th> Categoria </th>
+      <th> Ativos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.description %></td>
+      <td><%= item.category.description %></td>
+      <td><%= item.ativo %></td>
+      <td><%= link_to 'Editar', edit_item_path(item) %></td>
+      <td><%= link_to 'Delete', item_path(item),
+                  method: :delete,
+                  data: { confirm: 'Tem certeza?'}  %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Novo Item', new_item_path %>

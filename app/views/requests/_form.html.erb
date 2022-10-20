@@ -1,0 +1,27 @@
+<%= form_with model: @request do |form|%>
+
+  <div>
+    <%= form.label :Item %><br>
+    <%= form.collection_select :item_id, Item.all, :id, :name, prompt: "Selecione o item..." %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :estimated_time%><br>
+    <%= form.time_select :estimated_time, value: "%M:%S"%>
+  </div>
+  <br>
+  <div>
+    <%= form.label :Number_request%><br>
+    <%= form.number_field :number_request%>
+  </div>
+  <br>
+  <div>
+    <%= form.label :quantity%><br>
+    <%= form.number_field :quantity, min:0%>
+  </div>
+  <br>
+  <div>
+    <%= form.submit%>
+  </div>
+
+<% end %>

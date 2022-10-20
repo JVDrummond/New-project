@@ -1,0 +1,2 @@
+module MenuRequestsHelper
+end
